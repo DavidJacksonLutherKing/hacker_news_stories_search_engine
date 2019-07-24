@@ -9,9 +9,13 @@ router.get('/search', function (req, res, next) {
     var para = urllib.parse(req.url, true);
     var title = para.query.title;
     var text = para.query.text;
+    var startdate =para.query.startdate;
+    var enddate =para.query.enddate;
     var requestParameter = {};
     requestParameter.title = title;
-    requestParameter.text = text
+    requestParameter.text = text;
+    requestParameter.startdate = startdate;
+    requestParameter.enddate = enddate;
     requestParameterString= JSON.stringify(requestParameter);    
     var python_env_path = '';    
     python_env_path = path.join(__dirname, '../../service/hackernewsstories/Scripts/python');  
