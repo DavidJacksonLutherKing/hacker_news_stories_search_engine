@@ -17,7 +17,7 @@ module.exports = {
         });
         
         child.on('close', (code) => {
-          console.log('子进程退出，使用退出码', code);
+          console.log('subprocess exit code:', code);
         });
     }
 };
