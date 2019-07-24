@@ -6,7 +6,6 @@ $("#search").click(function(){
         url:'/service/search',
         type:'GET',
         data:data,
-        contentType:"application/json",
         success:function(msg){
             console.log(message);
         }

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hacker-news-stories-david",
+  "private_key_id": "1fa29ef2f998212c361ce2cc37c43cc3ef51ea3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCXohRlRN1O+2M3\nYsmhALsO5b9+gV8Q3WFmfbSces+e+H5ONfeoTNa8Vo/ge5b1yosqNyV52ubYCCFg\nOSfWcEBhvSNZ2ISUhHaBGzetNpobENqlgWxavto4inTKlZwNIqJWNvf/PBigbFjF\n63eDua2gLy8899uyIMj8x6X969CWtuDO836BXt7eh1YJTv5qf1Ejl8cWC3MYqLi6\ny7tbZOV+zxfPDLrLCiy0K7Vx9tHybGVyrSG+A94r37FlKYbkcQ2s0gbwGSMKgPBh\nV3J9CHkqj7iAHbdITsWyUH7st96tWuwpJduhr2W00aDDBjdlp4zMJEAjST0dFESs\nCoO2YAsfAgMBAAECggEABmFJ9Wbb3vZh2tM7w5v5wus0zvhXjSibcAoK/uiF8tzm\nx5iqtnihMmR8AkiA9g+TInAWkhV9UAqriNZu0C2B7/ra0W10SqF2MQF5qr6Y5lmj\nsYIMEpdkLCvbNSjtW3ohFXqTnbgkGx/j7lP1f+Pgo9RIawrMwiZx/nzSBaiV6rlv\nglYgllcTuGJs5S3uazqrf2dwGYCmoqVQUF7Xa9JTC6uk382qRwoFyx/n6PR7RgNV\nVS1vHneYwbBL5BPUM9lrZzQcQsH6mxJihcBysLWyRnqgXsIfSsS31AyqqZhebh7q\n6oQhid27nmA7Kuescyl8TECN037NdmVIVqMbJULWVQKBgQDV3YfDO7NvbHk5cqGH\nTTRi+lVhwS662TUjU7Rh1trm3x9Rangv89aPKQlVqSeHYCfSBES7TBKZNj6NgA/h\nMVOxr9GhPazdhtgeAqxASj3xkCa+S+gNYOIryhC6iGg5q+UgRX0kFEs4uuAYrt4l\nFo6wfnZv2jaOm9PAA9rDAf8l+wKBgQC1gdE10ioPdHSUG3+AYh+lmgRJfFdkV2iK\nJvjrEncRbIPzkDXXIl9Po5QY3os4VEntqyU0XkmJikH5Yw+AgGn5MpFR+y95uxWe\nahcr9rBxlZd05lHJ8XMjJJgVIudujq4xIo1fCCTcnX22ZGIP6RMP2kuhZdc5F9vE\nfYhi82q6LQKBgEtsknnHL1QnlGUvSUpXbxdNJBmSsPFSs0vfNGmhBZiQrhHfk72N\nqGja1yDvxDIZNlH6EWdgv9pq6AqtVGxeIh8zW6IbB0ElUkjbNnaB+HCeHxvT12YI\nehtpaxbuDpvwRKFqAGVeBt1eArSRz2STHQWfxBNUiRMoX7iDY36M0LhLAoGAM2LP\nUgdv9PQpVQz76eLdxsp10EAtlbDRXdtuuU5++yXXrYr0UzXd+fP7p5bJn2btjyXW\n4J6Y/yFvUCVlbCHu3qgcUDNm23XFxxWN/dpXVbDeMjBKk3uR9y8TB1jcYIZwdmSr\n1W2+0d6cipic0phP1zscElN8vSMuCtDnXexAGPkCgYBn9MT0eFAdhkxPNUYvYfhQ\nXHd/6Ma1yhLXr+JCBAu7xzpKVU2YwscntbgBJjb7sVMcJiGYioNNywynfjhAxge6\ni3P6NrP1MGNdPi0VavM+IY2g4C0QHNZQ6L9QfoJixTiDxDuOEGjq0XFWxRKaTNnb\niVOLbONfKrHSoI6Zq4Ecow==\n-----END PRIVATE KEY-----\n",
+  "client_email": "hacker-user-account@hacker-news-stories-david.iam.gserviceaccount.com",
+  "client_id": "108896329206031293989",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hacker-user-account%40hacker-news-stories-david.iam.gserviceaccount.com"
+}
