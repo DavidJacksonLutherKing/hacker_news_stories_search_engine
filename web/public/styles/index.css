@@ -6,21 +6,26 @@
 
 .search-form.after-search {
     width: 100%;
-    padding: 0 20px;
+    padding: 5px 20px;
     position: fixed;
     top: 0px;
     margin-top: 0px;
     background-color: rgb(255, 255, 255);
     z-index: 1;
-    height: 60px;
+    height: 70px;
     overflow: hidden;
     box-shadow: 0px 0.5px 5px #333333;
 }
 
 .search-result {
-    width: 800px;
-    margin: 0 auto;
-    margin-top: 20px
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 80px;
+    margin-left: 18px;
+    max-height: 3000px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    float: left;
 }
 
 .input-box {
@@ -97,7 +102,7 @@ div.publish-time {
     display: block;
     font-family: arial, sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     height: 15.2px;
     line-height: 15.96px;
     padding-bottom: 2px;
@@ -124,52 +129,52 @@ div.date-to-text-icon {
     text-align: left;
 }
 
-h3.title.after-search{
+div.search-form.after-search h3.title{
     display: none;
 }
 
-div.input-box.after-search{
+div.search-form.after-search div.input-box{
     width: 20%;
     padding:0;
     margin:7px 5px;
 }
 
-div.input-box.after-search input{
+div.search-form.after-search div.input-box input{
     border-width: 1px;
     border-color: #777777;
 }
 
-div.input-box.after-search#title-box{
+div.search-form.after-search div.input-box#title-box{
     width: 10%;
     max-width: 200px;
 }
 
-div.input-box.after-search#text-box{
+div.search-form.after-search div.input-box#text-box{
     width: 30%;
     max-width: 400px;
 }
-div.input-box.after-search#time-table-box{
+div.search-form.after-search div.input-box#time-table-box{
     width: 260px;
     padding:0;
     margin:7px 5px;
 }
-div.input-box.after-search input{
+div.search-form.after-search div.input-box input{
     padding: 0 10px;
 }
 
-div.input-box.after-search  i#time-table-icon {
+div.search-form.after-search div.input-box  i#time-table-icon {
     right:10px;
 }
 
-div.input-box.after-search button{
+div.search-form.after-search div.input-box button{
     padding: 10px;
 }
-div#search-button-box.after-search {
+div.search-form.after-search div#search-button-box {
     width:46px;
     height: 46px;
 }
 
-div#search-button-box.after-search span.search-btn-text{
+div.search-form.after-search div#search-button-box span.search-btn-text{
     display: none;
 }
 div#search-button-box span.search-icon{
