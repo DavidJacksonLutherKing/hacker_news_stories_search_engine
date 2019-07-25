@@ -5,11 +5,11 @@ $("#search").click(function () {
     var startdateMonth = daterange.substr(0,2);
     var startdateDay = daterange.substr(3,2);
     var startdateYear = daterange.substr(6,4);
-    var startdate = new Date(startdateYear+"-"+startdateMonth+"-"+startdateDay+" 00:00:00").valueOf();
+    var startdate = new Date(startdateYear+"-"+startdateMonth+"-"+startdateDay+" 00:00:00").getTime()/1000;
     var enddateMonth = daterange.substr(13,2);
     var enddateDay = daterange.substr(16,2);
     var enddateYear = daterange.substr(19,4);
-    var enddate = new Date(enddateYear+"-"+enddateMonth+"-"+enddateDay+" 00:00:00").valueOf();
+    var enddate = new Date(enddateYear+"-"+enddateMonth+"-"+enddateDay+" 00:00:00").getTime()/1000;
     if (title == '' && content == '') {
         $('#myModal').modal('show');
     } else {
@@ -26,8 +26,8 @@ $("#search").click(function () {
 });
 
 var dateObject = new Date();
-var startDate = dateObject.addDays(-6);
-var endDate = dateObject;
+var s = dateObject.addDays(-6);
+var e = dateObject;
 var last7daysArray = [dateObject.addDays(-6), dateObject];
 $('#demo').daterangepicker({
     "showDropdowns": true,
@@ -36,9 +36,9 @@ $('#demo').daterangepicker({
         "Last 7 Days": last7daysArray,
     },
     "alwaysShowCalendars": true,
-    "startDate": startDate,
-    "endDate": endDate,
+    "startDate": s,
+    "endDate": e,
     "opens": "left"
 });
-var start = new Date(startDate).format('yyyy-MM-dd hh:mm:ss');
-var stop = new Date(endDate).format('yyyy-MM-dd hh:mm:ss');
+var start = new Date(s).format('yyyy-MM-dd hh:mm:ss');
+var stop = new Date(e).format('yyyy-MM-dd hh:mm:ss');
