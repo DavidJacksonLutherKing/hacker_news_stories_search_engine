@@ -25,20 +25,14 @@ $("#search").click(function () {
     }
 });
 
-var dateObject = new Date();
-var s = dateObject.addDays(-6);
-var e = dateObject;
-var last7daysArray = [dateObject.addDays(-6), dateObject];
+var dateObject = new Date("2011-01-01 00:00:00");
+var s =new Date(dateObject.getTime());
+var e = new Date(dateObject.addDays(1000).getTime());
 $('#demo').daterangepicker({
     "showDropdowns": true,
     "showWeekNumbers": true,
-    "ranges": {
-        "Last 7 Days": last7daysArray,
-    },
     "alwaysShowCalendars": true,
     "startDate": s,
     "endDate": e,
     "opens": "left"
 });
-var start = new Date(s).format('yyyy-MM-dd hh:mm:ss');
-var stop = new Date(e).format('yyyy-MM-dd hh:mm:ss');
