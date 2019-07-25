@@ -14,7 +14,7 @@ $("#search").click(function () {
         $('#myModal').modal('show');
     } else {
         $("#search").attr("disabled", "disabled");
-        $("#search-form").attr("class",$("#search-form").attr("class")+" after-search");
+        $("#search-form").attr("class", $("#search-form").attr("class") + " after-search");
         $("#search-result").html("");
         var data = 'title=' + title + '&text=' + content + '&startdate=' + startdate + '&enddate=' + enddate;
         $.ajax({
@@ -35,6 +35,45 @@ $("#search").click(function () {
     }
 });
 
+$(document).keydown(function (event) {
+    if (event.keyCode == 13) {
+        var title = $("#title").val();
+        var content = $("#content").val();
+        var daterange = $('#demo').val();
+        var startdateMonth = daterange.substr(0, 2);
+        var startdateDay = daterange.substr(3, 2);
+        var startdateYear = daterange.substr(6, 4);
+        var startdate = new Date(startdateYear + "-" + startdateMonth + "-" + startdateDay + " 00:00:00").getTime() / 1000;
+        var enddateMonth = daterange.substr(13, 2);
+        var enddateDay = daterange.substr(16, 2);
+        var enddateYear = daterange.substr(19, 4);
+        var enddate = new Date(enddateYear + "-" + enddateMonth + "-" + enddateDay + " 00:00:00").getTime() / 1000;
+        if (title == '' && content == '') {
+            $('#myModal').modal('show');
+        } else {
+            $("#search").attr("disabled", "disabled");
+            $("#search-form").attr("class", $("#search-form").attr("class") + " after-search");
+            $("#search-result").html("");
+            var data = 'title=' + title + '&text=' + content + '&startdate=' + startdate + '&enddate=' + enddate;
+            $.ajax({
+                url: '/service/search',
+                type: 'GET',
+                data: data,
+                timeout: 50000,
+                success: function (msg) {
+                    console.log(msg);
+                    SearchApp.showSearchResultList(JSON.parse(msg));
+                },
+                complete: function (XMLHttpRequest, status) {
+                    console.log(XMLHttpRequest.status);
+                    console.log('status:' + status);
+                    $("#search").removeAttr("disabled");
+                }
+            });
+        }
+    }
+});
+
 var dateObject = new Date("2011-01-01 00:00:00");
 var s = new Date(dateObject.getTime());
 var e = new Date(dateObject.addDays(1000).getTime());
@@ -51,7 +90,7 @@ var SearchApp = {};
 SearchApp.searchResult = {};
 SearchApp.searchResult.resultList = [];
 SearchApp.showSearchResultList = function (data = "") {
-    var acticles = SearchApp.searchResult.resultList =data.articles;
+    var acticles = SearchApp.searchResult.resultList = data.articles;
     // var articlesJSONString = {
     //     "articles": [{
     //         "title": "David Lee Roth scream box \u2013 Arduino & Adafruit WaveShield davidleeroth",
@@ -108,14 +147,14 @@ SearchApp.showSearchResultList = function (data = "") {
     // var acticles = articlesJSONString.articles;
     for (key in acticles) {
         var title = acticles[key].title;
-        var text = acticles[key].text != null&&acticles[key].text != ''  ? acticles[key].text : '...';
+        var text = acticles[key].text != null && acticles[key].text != '' ? acticles[key].text : '...';
         var date = acticles[key].date;
         var url = acticles[key].URL != 'null' ? acticles[key].URL : '';
         var itemDiv = $('<div class="col-sm-12 article-item"></div>');
         var itemArticleDiv = $('<a href="' + url + '" target="_blank"><div class="article-title col-sm-12">' + title + '</div></a>');
         var itemArticleTextDiv = $('<div class="col-sm-12 row"><div class="publish-time">' + date + '</div><div class="date-to-text-icon">&nbsp&nbsp-</div><div class="article-text">&nbsp&nbsp' + text + '</div></div>');
         var itemArticleURLDiv = $('<div class="article-url col-sm-12 row"><a href="' + url + '" target="_blank"><div class="article-url-text col-sm-8 row">' + url + '</div></a></div>');
-        itemDiv.append(itemArticleDiv);        
+        itemDiv.append(itemArticleDiv);
         itemDiv.append(itemArticleURLDiv);
         itemDiv.append(itemArticleTextDiv);
         //itemDiv.text(title+ + "  " +date+ "\n"+ url +"\n"+text);
