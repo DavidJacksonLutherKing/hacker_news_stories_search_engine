@@ -1,4 +1,6 @@
 $("#search").click(function () {
+    $("#search").attr("disabled","disabled");
+    $("#search").text("Searching...");
     var title = $("#title").val();
     var content = $("#content").val();
     var daterange = $('#demo').val();
@@ -19,7 +21,13 @@ $("#search").click(function () {
             type: 'GET',
             data: data,
             success: function (msg) {
-                console.log(message);
+                console.log(JSON.parse(msg));                
+            },
+            complete:function(XMLHttpRequest,status){
+                console.log(XMLHttpRequest.status);
+                console.log('status:' + status);
+                $("#search").removeAttr("disabled");
+                $("#search").text("Search");
             }
         });
     }
