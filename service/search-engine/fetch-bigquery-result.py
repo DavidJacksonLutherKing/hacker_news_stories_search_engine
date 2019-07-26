@@ -6,8 +6,9 @@ try:
         path = os.getcwd().replace('\web','')+'\service\search-engine'
         filePath = path+"\key-file\hacker-news-stories-david-1fa29ef2f998.json"
     else:
-        path = os.getcwd().replace('/web','')+'/service/search-engine'
-        filePath = path+"/key-file/hacker-news-stories-david-1fa29ef2f998.json"
+
+        path =current_dir1 = os.path.dirname(__file__)
+        filePath =path+"/key-file/hacker-news-stories-david-1fa29ef2f998.json"
     args = json.loads(sys.argv[1])
     if 'title' in args:
         title = args['title']
