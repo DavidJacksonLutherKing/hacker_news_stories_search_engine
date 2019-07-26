@@ -70,7 +70,8 @@ $(document).keydown(function (event) {
                 success: function (data) {
                     var msg = JSON.parse(data);
                     if(msg.articles.length !=0 ){
-                        SearchApp.showSearchResultList(msg);                    }else{
+                        SearchApp.showSearchResultList(msg);                    
+                    }else{
                         SearchApp.showNoResult("No Search Results!");
                     }                    
                 },
