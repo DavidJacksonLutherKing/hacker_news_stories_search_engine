@@ -1,0 +1,38 @@
+{
+  "name": "hseapp",
+  "version": "1.1.2",
+  "description": "",
+  "main": "/bin/www",
+  "bin": {
+    "hseapp": "www.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "morgan": "^1.9.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"node ./bin/www",
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DavidJacksonLutherKing/hacker_news_stories_search_engine.git"
+  },
+  "keywords": [
+    "Hacker_news",
+    "Search",
+    "Engine"
+  ],
+  "author": "David Ding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidJacksonLutherKing/hacker_news_stories_search_engine/issues"
+  },
+  "homepage": "https://github.com/DavidJacksonLutherKing/hacker_news_stories_search_engine#readme"
+}
