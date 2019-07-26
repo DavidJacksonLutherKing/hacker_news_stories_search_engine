@@ -226,3 +226,7 @@ div.waiting-gif-box img{
     width: 100%;
     max-width: 1000px
 }
+
+button.search{
+    width:100%;
+}
