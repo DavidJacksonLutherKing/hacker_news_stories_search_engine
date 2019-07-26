@@ -17,6 +17,7 @@ $("#search").click(function () {
         $("#search-form").attr("class", $("#search-form").attr("class") + " after-search");
         $("#search-result").html("");
         var data = 'title=' + title + '&text=' + content + '&startdate=' + startdate + '&enddate=' + enddate;
+        SearchApp.showWaiting();
         $.ajax({
             url: '/service/search',
             type: 'GET',
@@ -34,6 +35,7 @@ $("#search").click(function () {
                 console.log(XMLHttpRequest.status);
                 console.log('status:' + status);
                 $("#search").removeAttr("disabled");
+                SearchApp.hideWaiting();
             }
         });
     }
@@ -59,6 +61,7 @@ $(document).keydown(function (event) {
             $("#search-form").attr("class", $("#search-form").attr("class") + " after-search");
             $("#search-result").html("");
             var data = 'title=' + title + '&text=' + content + '&startdate=' + startdate + '&enddate=' + enddate;
+            SearchApp.showWaiting();
             $.ajax({
                 url: '/service/search',
                 type: 'GET',
@@ -67,8 +70,7 @@ $(document).keydown(function (event) {
                 success: function (data) {
                     var msg = JSON.parse(data);
                     if(msg.articles.length !=0 ){
-                        SearchApp.showSearchResultList(JSON.parse(msg));
-                    }else{
+                        SearchApp.showSearchResultList(msg);                    }else{
                         SearchApp.showNoResult("No Search Results!");
                     }                    
                 },
@@ -76,6 +78,7 @@ $(document).keydown(function (event) {
                     console.log(XMLHttpRequest.status);
                     console.log('status:' + status);
                     $("#search").removeAttr("disabled");
+                    SearchApp.hideWaiting();
                 }
             });
         }
@@ -119,4 +122,12 @@ SearchApp.showSearchResultList = function (data = "") {
 SearchApp.showNoResult = function(msg){
     var messageDiv = $('<div class="search-no-result">'+msg+'</div>');
     $("#search-result").append(messageDiv);
+}
+
+SearchApp.showWaiting = function(){   
+    $("#waiting-gif-box").css("display","block");
+}
+
+SearchApp.hideWaiting = function(){
+    $("#waiting-gif-box").css("display","none");
 }
