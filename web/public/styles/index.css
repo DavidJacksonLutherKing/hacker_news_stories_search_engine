@@ -1,34 +1,50 @@
-.search-form {
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 200px
+body{
+    height: -webkit-fill-available;
+}
+div.row{
+    margin: 0;
 }
 
-.search-form.after-search {
+div.search-form {
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.search-form.after-search {
     width: 100%;
+    height: 70px;
     padding: 5px 20px;
     position: fixed;
-    top: 0px;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
     margin-top: 0px;
     background-color: rgb(255, 255, 255);
-    z-index: 1;
-    height: 70px;
+    z-index: 1;    
     overflow: hidden;
     box-shadow: 0px 0.5px 5px #333333;
 }
 
-.search-result {
-    width: 100%;
-    padding: 0 10px;
-    margin-top: 80px;
-    margin-left: 18px;
-    max-height: 3000px;
-    overflow-y: scroll;
+div.search-result-area{
+    margin: 0;
+    padding-top: 80px;
+}
+div.search-result {
+    height: fit-content;
+    padding: 0 30px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow-y: auto;
     overflow-x: hidden;
-    float: left;
+    float: left;    
 }
 
-.input-box {
+div.input-box {
     margin: 5px 10px;
 }
 
@@ -44,18 +60,17 @@ i#time-table-icon {
 }
 
 div.article-item {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 div.article-title {
-    word-break: hyphenate;
     color: rgb(26, 13, 171);
     cursor: pointer;
     display: inline-block;
     font-family: arial, sans-serif;
     font-size: 25px;
     font-weight: 400;
-    line-height: 25px;
+    line-height: 27px;
     margin-block-end: 0px;
     margin-block-start: 0px;
     margin-bottom: 0px;
@@ -73,6 +88,9 @@ div.article-title {
     text-overflow: ellipsis;
     overflow: hidden;
 }
+div.article-url{
+    padding: 0px;
+}
 
 div.article-url-text {
     word-break: hyphenate;
@@ -88,23 +106,27 @@ div.article-url-text {
     height: auto;
     line-height: 20px;
     padding-top: 1px;
+    padding-left: 0px;
     text-align: left;
     width: 100%;
     text-overflow: ellipsis;
 }
 
-div.publish-time {
+div.article-text-box{
+    padding: 0px;
+    display: inline-flex;
+}
+
+span.publish-time {
     max-width: 20%;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: rgb(128, 128, 128);
     display: block;
     font-family: arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    height: 15.2px;
-    line-height: 15.96px;
+    height: 25px;
+    line-height: 20px;
     padding-bottom: 2px;
     padding-left: 0px;
     padding-right: 0px;
@@ -113,7 +135,7 @@ div.publish-time {
     float: left;
 }
 
-div.article-text {
+span.article-text {
     float: left;
     white-space: nowrap;
     overflow: hidden;
@@ -122,25 +144,25 @@ div.article-text {
     font-family: arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    height: 15.2px;
-    line-height: 20.02px;
-    overflow-wrap: break-word;
+    height: 25px;
+    line-height:22.5px ; 
     text-align: left;
-    max-width: 78%;
+    max-width: -webkit-fill-available;
+    text-overflow: ellipsis;
 }
 
-div.date-to-text-icon {
+
+
+span.date-to-text-icon {
     float: left;
     white-space: nowrap;
-    overflow: hidden;
     color: rgb(84, 84, 84);
     display: inline;
     font-family: arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    height: 15.2px;
+    height: 25px;
     line-height: 20.02px;
-    overflow-wrap: break-word;
     text-align: left;
 }
 
@@ -213,18 +235,14 @@ div.search-no-result:hover{
 
 div.waiting-gif-box{
     width: 100%;
-    padding: 0 10px;
-    margin-top: 80px;
-    margin-left: 18px;
-    max-height: 3000px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    padding-top: 80px; 
     float: left;
     display: none;
 }
 div.waiting-gif-box img{
-    width: 100%;
-    max-width: 1000px
+    width: 100%;    
 }
 
 button.search{

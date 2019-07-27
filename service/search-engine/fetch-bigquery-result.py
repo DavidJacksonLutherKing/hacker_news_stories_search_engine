@@ -21,19 +21,12 @@ try:
     startdate = args['startdate']
     enddate = args['enddate']
 
-    # if title != '' and text != '':
-    #     SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%'+title+'%" AND text LIKE "%'+text+'%" LIMIT 40;'
-    # elif title == '' and text != '':
-    #     SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE text LIKE "%' + text + '%" LIMIT 40;'
-    # else :
-    #     SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%' + title + '%"LIMIT 40;'
-
     if title != '' and text != '':
-        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%'+title+'%" AND text LIKE "%'+text+'%" and time>='+startdate+' and time<='+enddate +' LIMIT 40; '
+        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%'+title+'%" AND text LIKE "%'+text+'%" and time>='+startdate+' and time<='+enddate
     elif title == '' and text != '':
-        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE text LIKE "%' + text + '%" and time>='+startdate+' and time<='+enddate +' LIMIT 40; '
+        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE text LIKE "%' + text + '%" and time>='+startdate+' and time<='+enddate 
     else :
-        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%' + title + '%" and time>='+startdate+' and time<='+enddate +' LIMIT 40; '
+        SQL ='SELECT title,url,text,time FROM `hacker-news-stories-david.hacker_news.stories` WHERE title LIKE "%' + title + '%" and time>='+startdate+' and time<='+enddate
 
 
     client = bigquery.Client.from_service_account_json(filePath)

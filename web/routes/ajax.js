@@ -4,8 +4,7 @@ var path = require('path');
 var run_cmd = require('../util/run_cmd.js');
 
 var urllib = require('url');
-router.get('/search', function (req, res, next) {
-    // res.send("received request");
+router.get('/search', function (req, res, next) {    
     var para = urllib.parse(req.url, true);
     var title = para.query.title;
     var text = para.query.text;
@@ -17,19 +16,23 @@ router.get('/search', function (req, res, next) {
     requestParameter.startdate = startdate;
     requestParameter.enddate = enddate;
     requestParameterString= JSON.stringify(requestParameter);
-    console.log(requestParameterString);
     var python_env_path = '';
     if (process.platform == 'win32') {
-      python_env_path = path.join(__dirname, '../../service/hackernewsstories/Scripts/python');
+        python_env_path = path.join(__dirname, '../../service/hackernewsstories/Scripts/python');
     } else {
-      python_env_path = path.join(__dirname, '../../service/hackernewsstoriesUbuntu/bin/python3.6')
+        python_env_path = path.join(__dirname, '../../service/hackernewsstoriesUbuntu/bin/python3.6')
     }
     console.log(requestParameterString);
     run_cmd.exec(python_env_path,[ path.join(__dirname,'../../service/search-engine/fetch-bigquery-result.py'),requestParameterString],
-        function(data){
-            res.send(data.toString());
+        function(data,me){
+            me.stdout += data.toString();            
+        },
+        function(me){
+            me.exit =1;
+            console.log(me.stdout);
+            res.send(me.stdout);
         }
-    );
+    );  
 });
 
 module.exports = router;
