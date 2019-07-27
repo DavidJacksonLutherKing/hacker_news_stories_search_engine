@@ -63,6 +63,11 @@ div.article-item {
     padding: 5px 0;
 }
 
+div.article-page{
+    height: -webkit-fill-available;
+    display: none;
+}
+
 div.article-title {
     color: rgb(26, 13, 171);
     cursor: pointer;
