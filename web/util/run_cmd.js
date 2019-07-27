@@ -20,9 +20,9 @@ module.exports = {
                 console.log(data.toString());
             });
             
-            child.on('close', (code) => {
-              console.log('subprocess exit code:', code);
+            child.on('close', (code) => {              
               cb_end(me);
+              console.log('childprocess exit code:', code);
             });
         }catch (error){
             console.log(error.toString(0));
