@@ -27,6 +27,8 @@ router.get('/search', function (req, res, next) {
         var resSendData = process_data.fetchDataByPage(JSON.parse(fetchData.data), page, itemNumInPage);
         res.send(resSendData);
     } else {
+        var errorMsg = "";
+        var queryDataResult = 
         console.log("fetch data from bigquery")
         requestParameterString = JSON.stringify(requestParameter);
         var python_env_path = '';
@@ -39,14 +41,25 @@ router.get('/search', function (req, res, next) {
         run_cmd.exec(python_env_path, [path.join(__dirname, '../../service/search-engine/fetch-bigquery-result.py'), requestParameterString],
             function (data) {
                 queryDataResult = data;
+                console.log('queryDataResult');
                 console.log(queryDataResult);
+            },
+            function(err){
+                console.log('error');
+                console.error(err);
+                queryDataResult = "";
+                errorMsg = err;
             }
         );
-        var cacheData = cache_data.cache_data(requestParameter, queryDataResult, function (data) {
-            console.log('after cached data:' + data);
-            var resSendData = process_data.fetchDataByPage(data, page, itemNumInPage);
-            res.send(resSendData);
-        });
+        if(queryDataResult != ""){
+            var cacheData = cache_data.cache_data(requestParameter, queryDataResult, function (data) {
+                console.log('after cached data:' + data);
+                var resSendData = process_data.fetchDataByPage(data, page, itemNumInPage);
+                res.send(resSendData);
+            });
+        }else{
+            res.status(500).send(errorMsg);
+        }        
     }
 });
 

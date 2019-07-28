@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hacker New Stories</title>
+    <title>Welcome to Hackers! Enjoy your searching journey</title>
+    <link rel="shortcut icon" href="/images/hacker2.jpeg" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/daterangepicker.css">
-    <link rel="stylesheet" href="/styles/paging.css"/>
+    <link rel="stylesheet" href="/styles/paging.css" />
     <link rel="stylesheet" href="/styles/index.css">
 </head>
 
@@ -18,27 +19,30 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <img src="/images/hacker.png"/>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Warning</h4>
+                    <h4 class="modal-title">Oop!</h4>
                 </div>
                 <div class="modal-body">
-                    <p> You didn't input any of title or context. Please input any of them.</p>
+                    <p> </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
-            </div>        
-        </div>      
+            </div>
+        </div>
     </div>
-    
+
     <!-- Search Form Section -->
     <div class="search-form row" id="search-form">
-        <h3 class="title ">
-            <center>Hacker News Every Day!</center>
-        </h3>
+        <div class="search-engine-logo col-sm-12 input-box" id="search-engine-logo">
+            <a href="/">
+                <img src="/images/hacker2.jpeg" alt="Hacker News Every Day!" />
+            </a>
+        </div>
         <div class="col-sm-12 input-box " id="title-box">
             <input type="text" name="" class="form-control input-lg" id="title" placeholder="Title...">
         </div>
@@ -50,8 +54,8 @@
             <i class="fa fa-calendar" id="time-table-icon"></i>
         </div>
         <div class="col-sm-12 input-box " id="search-button-box">
-            <button class="btn btn-primary col-sm-12 btn-lg" id="search">
-                <span class="search-btn-text ">Search</span>
+            <button class="btn col-sm-12 btn-lg" id="search">
+                <span class="search-btn-text ">Hack it!</span>
                 <span class="search-btn-text ">&nbsp;</span>
                 <span class="fa fa-search search-icon"></span>
             </button>
@@ -67,7 +71,7 @@
         <div class="col-lg-8 col-sm-12">
             <img src="/images/waiting.gif" id="waiting-gif" />
         </div>
-        <div class="col-lg-2 hidden-md"></div>        
+        <div class="col-lg-2 hidden-md"></div>
     </div>
 </body>
 <script src="/javascript/jquery.min.js"></script>
@@ -79,6 +83,6 @@
 <script src="/javascript/index.js"></script>
 <script type="text/javascript">
     //翻页
-   
 </script>
+
 </html>

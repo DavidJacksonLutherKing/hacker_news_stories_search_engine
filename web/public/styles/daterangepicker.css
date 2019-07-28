@@ -112,7 +112,7 @@
   .daterangepicker td.start-date.end-date {
     border-radius: 4px; }
   .daterangepicker td.active, .daterangepicker td.active:hover {
-    background-color: #357ebd;
+    background-color: black;
     border-color: transparent;
     color: #fff; }
   .daterangepicker th.month {
@@ -147,7 +147,7 @@
     padding: 0 6px 0 28px;
     width: 100%; }
     .daterangepicker .input-mini.active {
-      border: 1px solid #08c;
+      border: 1px solid #444;
       border-radius: 4px; }
   .daterangepicker .daterangepicker_input {
     position: relative; }

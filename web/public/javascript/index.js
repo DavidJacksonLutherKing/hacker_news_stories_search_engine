@@ -23,6 +23,7 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
     SearchApp.queryPara.page = page;
     SearchApp.queryPara.itemNumInPage = itemNumInPage;
     if (title == '' && context == '') {
+        $('#search-msg .modal-body p').text("Watch out for your computer. If you input neither of the title nor the context your care about, it's gonna be hacker. HA! HA!");
         $('#search-msg').modal('show');
     } else {
         $("#search").attr("disabled", "disabled");
@@ -48,6 +49,10 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
                 console.log('status:' + status);
                 $("#search").removeAttr("disabled");
                 SearchApp.hideWaiting();
+            },
+            error:function(error){
+                $('#search-msg .modal-body p').text("Hackers are sleeping. Try to awake them up very later. HA! HA!");
+                $('#search-msg').modal('show');
             }
         });
     }
@@ -55,9 +60,9 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
 
 SearchApp.showSearchResultList = function (data = "") {
     var articles = SearchApp.searchResult.resultList = data.articles;
-    var articleList = $('<div id="article-list"></div>')
+    var articleList = $('<div id="article-list col-sm-12"></div>')
     var pageDivArray = [];
-    var currentPageDiv = $('<div id="page-1" class="article-page"><div>');
+    var currentPageDiv = $('<div id="page-1" class="article-page col-sm-12"><div>');
     var currentPage = data.pageInfo.currentPage;
     var pageNum = data.pageInfo.pageNum;
     for (key in articles) {

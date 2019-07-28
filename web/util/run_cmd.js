@@ -1,11 +1,15 @@
 module.exports = {
-    exec: function (cmd, args, cb_stdout) {
+    exec: function (cmd, args, cb_stdout,cd_error) {
         try {
             const spawn = require('child_process').spawnSync;
-            const child = spawn(cmd, args);            
-            cb_stdout(child.stdout);
+            const child = spawn(cmd, args);     
+            if('articles'in JSON.parse(child.stdout) ){
+                cb_stdout(child.stdout);
+            } else{
+                cd_error(child.stdout);
+            }               
         } catch (error) {
-            console.log(error.toString(0));
+            cd_error(error.toString());
         }
     }
 };
