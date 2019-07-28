@@ -9,21 +9,21 @@
 		addhtml:function(obj,pageinit){
 			return (function(){
 				obj.empty();
-				/*上一页*/
+				/*Previous Page*/
 				if (pageinit.current > 1) {
-					obj.append('<a href="javascript:;" class="prebtn">上一页</a>');
+					obj.append('<a href="javascript:;" class="prebtn">Previous</a>');
 				} else{
 					obj.remove('.prevPage');
-					obj.append('<span class="disabled">上一页</span>');
+					obj.append('<span class="disabled">Previous</span>');
 				}
-				/*中间页*/
+				/*Middle Page*/
 				if (pageinit.current >4 && pageinit.pageNum > 4) {
 					obj.append('<a href="javascript:;" class="zxfPagenum">'+1+'</a>');
 					obj.append('<a href="javascript:;" class="zxfPagenum">'+2+'</a>');
 					obj.append('<span>...</span>');
 				}
 				if (pageinit.current >4 && pageinit.current <= pageinit.pageNum-5) {
-					var start  = pageinit.current - 2,end = pageinit.current + 2;
+					var start  = pageinit.current - 2,end = parseInt(pageinit.current) + 2;
 				}else if(pageinit.current >4 && pageinit.current > pageinit.pageNum-5){
 					var start  = pageinit.pageNum - 4,end = pageinit.pageNum;
 				}else{
@@ -40,20 +40,20 @@
 						}
 					}
 				}
-				if (end < pageinit.pageNum) {
+				if (end < pageinit.pageNum-4) {
 					obj.append('<span>...</span>');
 				}
-				/*下一页*/
+				/*Next Page*/
 				if (pageinit.current >= pageinit.pageNum) {
 					obj.remove('.nextbtn');
-					obj.append('<span class="disabled">下一页</span>');
+					obj.append('<span class="disabled">Next</span>');
 				} else{
-					obj.append('<a href="javascript:;" class="nextbtn">下一页</a>');
+					obj.append('<a href="javascript:;" class="nextbtn">Next</a>');
 				}
-				/*尾部*/
-				obj.append('<span>'+'共'+'<b>'+pageinit.pageNum+'</b>'+'页，'+'</span>');
-				obj.append('<span>'+'到第'+'<input type="number" class="zxfinput" value="5"/>'+'页'+'</span>');
-				obj.append('<span class="zxfokbtn">'+'确定'+'</span>');
+				/*End*/
+				obj.append('<span>'+'Totally&nbsp'+'<b>'+pageinit.pageNum+'</b>'+'&nbspPages,'+'</span>');
+				obj.append('<span>'+'&nbspGo to page'+'<input type="number" class="zxfinput" value="1"/>'+'.'+'</span>');
+				obj.append('<span class="zxfokbtn">'+'Confirm'+'</span>');
 			}());
 		},
 		bindEvent:function(obj,pageinit){

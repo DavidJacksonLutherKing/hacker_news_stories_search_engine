@@ -3,6 +3,7 @@ var router = express.Router();
 var path = require('path');
 var run_cmd = require('../util/run_cmd.js');
 var cache_data = require("../util/cache_data.js");
+var process_data = require("../util/process_data.js");
 var urllib = require('url');
 router.get('/search', function (req, res, next) {
     var para = urllib.parse(req.url, true);
@@ -10,6 +11,8 @@ router.get('/search', function (req, res, next) {
     var text = para.query.text;
     var startdate = para.query.startdate;
     var enddate = para.query.enddate;
+    var page = para.query.page||1;
+    var itemNumInPage = para.query.itemNum || 100;
     var requestParameter = {};
     requestParameter.title = title;
     requestParameter.text = text;
@@ -21,7 +24,8 @@ router.get('/search', function (req, res, next) {
     if (fileExist.status == true) {
         console.log("fetch data from cache");
         fetchData = cache_data.fetch_data(requestParameter);
-        res.send(fetchData.data);
+        var resSendData = process_data.fetchDataByPage(JSON.parse(fetchData.data), page, itemNumInPage);
+        res.send(resSendData);
     } else {
         console.log("fetch data from bigquery")
         requestParameterString = JSON.stringify(requestParameter);
@@ -37,15 +41,11 @@ router.get('/search', function (req, res, next) {
                 queryDataResult = data;
                 console.log(queryDataResult);
             }
-            // function (me) {
-            //     me.exit = 1;
-            //     console.log(me.stdout);
-            //     queryDataResult = me.stdout;                
-            // }
         );
         var cacheData = cache_data.cache_data(requestParameter, queryDataResult, function (data) {
             console.log('after cached data:' + data);
-            res.send(data);
+            var resSendData = process_data.fetchDataByPage(data, page, itemNumInPage);
+            res.send(resSendData);
         });
     }
 });

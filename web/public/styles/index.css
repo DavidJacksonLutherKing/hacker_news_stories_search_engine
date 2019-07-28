@@ -59,13 +59,12 @@ i#time-table-icon {
     font-size: 32px;
 }
 
-div.article-item {
-    padding: 5px 0;
+div.article-page {
+    height: fit-content;
 }
 
-div.article-page{
-    height: -webkit-fill-available;
-    display: none;
+div.article-item {
+    padding: 5px 0;
 }
 
 div.article-title {
