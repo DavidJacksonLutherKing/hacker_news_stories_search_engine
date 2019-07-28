@@ -1,6 +1,6 @@
 $("#search").click(function () {
-    var title = $("#title").val();
-    var content = $("#content").val();
+    var title = $("#title").val().trim();
+    var content = $("#content").val().trim();
     var daterange = $('#demo').val();
     var startdateMonth = daterange.substr(0, 2);
     var startdateDay = daterange.substr(3, 2);
