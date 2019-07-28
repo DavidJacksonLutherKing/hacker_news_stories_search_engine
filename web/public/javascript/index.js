@@ -10,7 +10,7 @@ SearchApp.searchResult = {};
 SearchApp.searchResult.resultList = [];
 SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
     var title = SearchApp.queryPara.title = $("#title").val().trim();
-    var context = SearchApp.queryPara.text = $("#content").val().trim();
+    var context = SearchApp.queryPara.text = $("#context").val().trim();
     var daterange = $('#demo').val();
     var startdateMonth = daterange.substr(0, 2);
     var startdateDay = daterange.substr(3, 2);
@@ -22,7 +22,7 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
     var enddate = SearchApp.queryPara.endDate = new Date(enddateYear + "-" + enddateMonth + "-" + enddateDay + " 00:00:00").getTime() / 1000;
     SearchApp.queryPara.page = page;
     SearchApp.queryPara.itemNumInPage = itemNumInPage;
-    if (title == '' && content == '') {
+    if (title == '' && context == '') {
         $('#search-msg').modal('show');
     } else {
         $("#search").attr("disabled", "disabled");

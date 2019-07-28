@@ -1,9 +1,9 @@
 module.exports = {
     fetchDataByPage: function (data, page, itemNumInPage) {
-        console.log( typeof data);
-        if (typeof data != "object"){
+        if (Buffer.isBuffer(data)){
             data= JSON.parse(data);
         }
+        console.log( Buffer.isBuffer(data));
         var articlesObject = data;
         var articlesList = articlesObject.articles;
         if (articlesList != undefined){
