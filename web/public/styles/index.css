@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: 'MYSCARS';
-    src: url('/fonts/MYSCARS_.ttf');
+    src: url('/fonts/MYSCARS.ttf');
 }
 
 @font-face {
     font-family: 'MYBLS';
-    src: url('/fonts/MYBLS___.ttf');
+    src: url('/fonts/MYBLS.ttf');
 }
 
 body {
@@ -326,19 +326,20 @@ div.search-form.after-search div.input-box i#time-table-icon {
 }
 
 div.input-box button {
-    background-color: #000;
-    color: white;
+    border: 1px solid black;
     background-color: #000;
     color: white;
     font-family: MetalMacabre;
     font-size: 24px;
     line-height: 40px;
     height: 46px;
+    width: 100%;
 }
 
 div.input-box button:hover {
     background-color: #ddd;
     color: black;
+    border: 1px solid black;
 }
 
 div.input-box button:focus {
