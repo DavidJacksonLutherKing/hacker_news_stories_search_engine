@@ -9,13 +9,13 @@
 }
 
 @font-face {
-    font-family: 'MYSCARS';
-    src: url('/fonts/MYSCARS.ttf');
+    font-family: 'BloodA';
+    src: url('/fonts/BloodA.ttf');
 }
 
 @font-face {
-    font-family: 'MYBLS';
-    src: url('/fonts/MYBLS.ttf');
+    font-family: 'BloodB';
+    src: url('/fonts/BloodB.ttf');
 }
 
 body {
@@ -67,14 +67,14 @@ div#search-msg h4.modal-title {
     line-height: 50px;
     margin-left: 10px;
     float: left;
-    font-family: 'MYSCARS';
+    font-family: 'BloodA';
     font-size: 40px;
     font-weight: 1000
 }
 
 div#search-msg div.modal-body p {
     font-size: 30px;
-    font-family: 'MYSCARS';
+    font-family: 'BloodA';
 }
 
 div#search-msg div.modal-content {
@@ -89,7 +89,7 @@ div#search-msg div.modal-footer button {
     border-radius: 0px;
     font-size: 25px;
     font-weight: 800;
-    font-family: MYBLS;
+    font-family: BloodB;
 }
 
 div#search-msg div.modal-footer button:hover {
