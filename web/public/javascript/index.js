@@ -60,7 +60,7 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
 
 SearchApp.showSearchResultList = function (data = "") {
     var articles = SearchApp.searchResult.resultList = data.articles;
-    var articleList = $('<div id="article-list col-sm-12"></div>')
+    var articleList = $('<div class="article-list col-sm-12"></div>')
     var pageDivArray = [];
     var currentPageDiv = $('<div id="page-1" class="article-page col-sm-12"><div>');
     var currentPage = data.pageInfo.currentPage;
@@ -136,3 +136,4 @@ $('#demo').daterangepicker({
     "endDate": e,
     "opens": "left"
 });
+

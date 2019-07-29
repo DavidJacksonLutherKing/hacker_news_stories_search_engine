@@ -2,6 +2,7 @@ div.zxf_pagediv{
 	text-align: center;
 	color: #999999;
 	padding: 20px 20px 40px 0;
+	float: left;
 }
 div.zxf_pagediv a{
 	text-decoration: none;
@@ -58,16 +59,28 @@ div.zxf_pagediv span,div.zxf_pagediv a{
 	color: #666;
 }
 .zxfokbtn{
-	width: 70px;
-	height: 32px;
-	line-height: 32px;
-	border: 1px solid #000;
-	margin-left: 10px;
-	cursor:pointer;
-	border-radius: 3px;
-	color: #fff;   
-	background-color: #000;
+	width: 100px;
+    height: 40px;
+    line-height: 10px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #000;
 }
+.zxfokbtn.disable {
+	width: 100px;
+    height: 40px;
+    line-height: 10px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #444;
+}
+
 .zxfokbtn:hover{
 	background-color: #ddd;
 	color: #000;

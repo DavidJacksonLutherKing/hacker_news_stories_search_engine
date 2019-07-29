@@ -175,6 +175,10 @@ i#time-table-icon {
     font-size: 32px;
 }
 
+div.article-list{
+    height: fit-content;
+    float: left;
+}
 div.article-page {
     height: fit-content;
 }
