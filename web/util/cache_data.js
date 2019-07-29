@@ -58,7 +58,7 @@ module.exports = {
                 }
             });
         }        
-        fs.writeFileSync(file_path,data, function (writeErr) {
+        fs.writeFileSync(file_path, JSON.stringify(me.data), function (writeErr) {
             console.log('start to write data');
             if (writeErr) {
                 console.error(writeErr);
