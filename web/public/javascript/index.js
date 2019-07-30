@@ -1,7 +1,7 @@
 /**
  *  Author : David Ding
  * 
- *  Init Search App Object
+ *  Init SearchApp Object
  *  Set attribute and method to object
  */
 var SearchApp = {};
@@ -85,7 +85,7 @@ SearchApp.showSearchResultList = function (data = "") {
     var articles = SearchApp.searchResult.resultList = data.articles;
     var articleList = $('<div class="article-list col-sm-12"></div>')
     var pageDivArray = [];
-    var currentPageDiv = $('<div id="page-1" class="article-page col-sm-12"><div>');
+    var currentPageDiv = $('<div id="page-1" class="article-page"><div>');
     var currentPage = data.pageInfo.currentPage;
     var pageNum = data.pageInfo.pageNum;
     for (key in articles) {
