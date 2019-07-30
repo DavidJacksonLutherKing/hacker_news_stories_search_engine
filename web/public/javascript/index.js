@@ -1,3 +1,9 @@
+/**
+ *  Author : David Ding
+ * 
+ *  Init Search App Object
+ *  Set attribute and method to object
+ */
 var SearchApp = {};
 SearchApp.queryPara = {};
 SearchApp.queryPara.title = "";
@@ -8,7 +14,13 @@ SearchApp.queryPara.page = 1;
 SearchApp.queryPara.itemNumInPage = 100;
 SearchApp.searchResult = {};
 SearchApp.searchResult.resultList = [];
+
+/**
+ * Method : Fetch Search Result (CurrentPage = 1, ItemNumberInaPage) = > void
+ * Fetch search result Data with Ajax call from backend server
+ */
 SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
+    // Package all the data user input.
     var title = SearchApp.queryPara.title = $("#title").val().trim();
     var context = SearchApp.queryPara.text = $("#context").val().trim();
     var daterange = $('#demo').val();
@@ -22,10 +34,14 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
     var enddate = SearchApp.queryPara.endDate = new Date(enddateYear + "-" + enddateMonth + "-" + enddateDay + " 00:00:00").getTime() / 1000;
     SearchApp.queryPara.page = page;
     SearchApp.queryPara.itemNumInPage = itemNumInPage;
+
+    // Check if both the title and the text are leave blank
     if (title == '' && context == '') {
+        // If true, show modal to tell user to input something.
         $('#search-msg .modal-body p').text("Watch out for your computer. If you input neither of the title nor the context your care about, it's gonna be hacker. HA! HA!");
         $('#search-msg').modal('show');
     } else {
+        // If false, request search result. At the same time disable the search button,push the search form to top as a bar, and show the waiting gif.
         $("#search").attr("disabled", "disabled");
         $("#search-form").attr("class", $("#search-form").attr("class") + " after-search");
         $("#search-result").html("");
@@ -39,18 +55,20 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
                 var msg = JSON.parse(data);
                 console.log(data);
                 if (msg.articles.length != 0) {
+                    //if search result is received and has articles, then call showSearchResultList method to deploy the result to the web page.
                     SearchApp.showSearchResultList(msg);
                 } else {
+                    //if search result is received and has articles, then show the no search result to the web page.
                     SearchApp.showNoResult("No Search Results!");
                 }
             },
             complete: function (XMLHttpRequest, status) {
-                console.log(XMLHttpRequest.status);
-                console.log('status:' + status);
+                //After finish request to enable the search button, and hide waiting gif.
                 $("#search").removeAttr("disabled");
                 SearchApp.hideWaiting();
             },
-            error:function(error){
+            error: function (error) {
+                //If server error returned, tell the user of the server error and try later.
                 $('#search-msg .modal-body p').text("Hackers are sleeping. Try to awake them up very later. HA! HA!");
                 $('#search-msg').modal('show');
             }
@@ -58,7 +76,12 @@ SearchApp.fetchSearchResult = function (page = 1, itemNumInPage = 100) {
     }
 }
 
+/**
+ * Method : Show Search Result List (JSONData) = > void
+ * deploy the data to $("search-result-area"), and make the page tool.
+ */
 SearchApp.showSearchResultList = function (data = "") {
+    // parse data to snippet and render data into dom element
     var articles = SearchApp.searchResult.resultList = data.articles;
     var articleList = $('<div class="article-list col-sm-12"></div>')
     var pageDivArray = [];
@@ -84,24 +107,30 @@ SearchApp.showSearchResultList = function (data = "") {
     for (page in pageDivArray) {
         articleList.append(pageDivArray[page]);
     }
-
+    // Add page tools, init method is from /web/public/paging.js. This is a plug-in.
     $("#search-result").append(articleList);
     var paging = $("#search-result").append($('<div class="zxf_pagediv"></div>'));
     $(".zxf_pagediv").createPage({
         pageNum: data.pageInfo.pageNum,
         current: currentPage,
         backfun: function (e) {
-            SearchApp.fetchSearchResult(e.current,SearchApp.queryPara.itemNumInPage);
+            SearchApp.fetchSearchResult(e.current, SearchApp.queryPara.itemNumInPage);
             console.log(e);
         }
     });
 };
 
+/**
+ * Method : Show No Result (Message)
+ */
 SearchApp.showNoResult = function (msg) {
     var messageDiv = $('<div class="search-no-result">' + msg + '</div>');
     $("#search-result").append(messageDiv);
 }
 
+/**
+ * Method : Show No Result (Message)
+ */
 SearchApp.showWaiting = function () {
     $("#waiting-gif-box").css("display", "block");
 }
@@ -112,19 +141,24 @@ SearchApp.hideWaiting = function () {
 
 
 /**
- * Search Action Handler
+ * Event Handler on click search button
  */
 $("#search").click(function () {
     SearchApp.fetchSearchResult();
-
 });
 
+/**
+ * Event Handler on press enter key 
+ */
 $(document).keydown(function (event) {
     if (event.keyCode == 13) {
         SearchApp.fetchSearchResult();
     }
 });
 
+/**
+ * data range box configures and inits here.
+ */
 var dateObject = new Date("2011-01-01 00:00:00");
 var s = new Date(dateObject.getTime());
 var e = new Date(dateObject.addDays(2000).getTime());
@@ -136,4 +170,3 @@ $('#demo').daterangepicker({
     "endDate": e,
     "opens": "left"
 });
-
