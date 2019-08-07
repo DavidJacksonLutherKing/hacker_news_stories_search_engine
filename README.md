@@ -11,7 +11,7 @@ This project is to build up an online search engine of Hacker New Stories, compo
 This document is to help you understand how the search engine is designed, developed and deployed.
  
 ## Content
-[TOC]
+
 
  
 ## 1	Prerequisites
@@ -226,8 +226,11 @@ Fonts files in ***/web/public/fonts/***.
 Style files in ***/web/public/style/***.
 #### 3.1.1	Search Form & Search bar
 **Search form:**
+
 ![](http://i66.tinypic.com/34yoc3q.jpg)
+
 **Search bar:**
+
 ![](http://i68.tinypic.com/28b731v.jpg)
 
 #### 3.1.2	Message Modal
