@@ -159,50 +159,95 @@ Data Flow Steps:
 #### 2.2.2	Web Service Package 
 |-- web
 |   |-- app.js&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“app.js” – to compose of the web application
+
 |   |-- package-lock.json
+
 |   |-- package.json
+
 |   |-- bin&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“bin” – to include www.js which is server 
+
 |   |   |-- www.js
+
 |   |-- cache_data_folder &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“cache_data_folder” –  to hold data json temp files
+
 |   |-- public &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“public” – to hold static files like fonts, images, javascript, styles
+
 |   |   |-- fonts
+
 |   |   |   |-- BloodA.ttf
+
 |   |   |   |-- BloodB.ttf
+
 |   |   |   |-- fontawesome-webfont.woff2
+
 |   |   |   |-- glyphicons-halflings-regular.eot
+
 |   |   |   |-- glyphicons-halflings-regular.svg
+
 |   |   |   |-- glyphicons-halflings-regular.ttf
+
 |   |   |   |-- glyphicons-halflings-regular.woff
+
 |   |   |   |-- glyphicons-halflings-regular.woff2
+
 |   |   |   |-- Kill The Lights.ttf
+
 |   |   |   |-- MetalMacabre.ttf
+
 |   |   |   |-- SolsticeOfSuffering.ttf
+
 |   |   |-- images
+
 |   |   |   |-- hacker.png
+
 |   |   |   |-- hacker2.jpeg
+
 |   |   |   |-- waiting.gif
+
 |   |   |-- javascript
+
 |   |   |   |-- bootstrap.min.js
+
 |   |   |   |-- date.js
+
 |   |   |   |-- daterangepicker.js
+
 |   |   |   |-- index.js
+
 |   |   |   |-- jquery.min.js
+
 |   |   |   |-- moment.min.js
+
 |   |   |   |-- paging.js
+
 |   |   |-- styles
+
 |   |   |   |-- bootstrap.min.css
+
 |   |   |   |-- daterangepicker.css
+
 |   |   |   |-- font-awesome.min.css
+
 |   |   |   |-- index.css
+
 |   |   |   |-- paging.css
+
 |   |-- routes  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“routes” –  to hold request handler files
+
 |   |   |-- ajax.js
+
 |   |   |-- index.js
+
 |   |-- utilensp;ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“util” – to hold function files
+
 |   |   |-- cache_data.js
-|   |   |-- process_data.js
+
+|   |   |-- process_data.
+
 |   |   |-- run_cmd.js
+
 |   |-- views&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//	“views” – to hold html render file
+
 |   |   |-- index.ejs
 
 
@@ -247,6 +292,14 @@ Style files in ***/web/public/style/***.
 ![](http://i68.tinypic.com/35na7tv.jpg)
  
 ### 3.2	Form Submit Communication (Frontend)
+**ection 3.2** is to show you front-end communication design and souce code location.
+
+Code in ***/web/public/javascript/index.js***. 
+Communication flow at front-end as below.
+
+![](http://i67.tinypic.com/2rdc46q.jpg)
+
+### 3.3	Form Submit Handler (Backend)
 **Section 3.3** is to show you the backend request handle flow design and souce code location.
 
 Code in ***/web/routes/ajax.js***.
@@ -256,7 +309,7 @@ Code in ***/web/util/run_cmd.js*** is to hang up the process and execute python 
 Code in ***/web/util/cache_data.js*** to check cached data, fetch cached data, and ache data file.
 
 Request handle flow at backend is as below.
-![](http://i68.tinypic.com/x5uq0h.jpg)
+![](http://i68.tinypic.com/rl98af.jpg)
 
 ### 3.4	Search Request Process and Output (Python)
 **Section 3.4** is to show you the python data query flow design and souce code location.
