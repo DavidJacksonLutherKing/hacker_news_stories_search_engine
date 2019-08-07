@@ -43,7 +43,7 @@ For this application development, **Python** is chosen as the data processing de
 + [Download NodeJS for Windows 10 (x64 as an example)](https://nodejs.org/dist/v10.16.0/node-v10.16.0-x64.msi )
 
 ### 1.2	IDE Choices
-**Section 2.1** is to help you understand which IDEs are chosen to develop the application.
+**Section 1.2** is to help you understand which IDEs are chosen to develop the application.
 #### 1.2.1	Visual Studio Code
 **Visual Studio Code** is a light code edit integrated with online optional add-on tool source and version control tool. It is easy to edit front-end code like **html, CSS, JavaScript** and debug tool to debug **Nodejs** Application.
 
@@ -127,7 +127,7 @@ It shows “No Search Results” on the page.
 ![](http://i67.tinypic.com/2hdr58y.jpg)
 Modal Message: Hackers are sleeping. Try to awake them up very later. HA! HA! 
 ### 2.2	Development Framework Design
-Section 2.2 is to introduce how search engine app interacting among front-end, back-end and BigQuery.
+**Section 2.2** is to introduce how search engine app interacting among front-end, back-end and BigQuery.
 
 #### 2.2.1	Application Mechanism Demonstration
 ![](http://i66.tinypic.com/2lc4vop.jpg)
