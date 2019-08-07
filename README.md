@@ -292,7 +292,7 @@ Style files in ***/web/public/style/***.
 #### 3.1.2	Message Modal
 ![](http://i66.tinypic.com/2n852k2.jpg)
 
-#### 3.1.3	Search Results & Page Tool
+#### 3.1.3	Search Results & Paging Tool
 ![](http://i65.tinypic.com/2qk45rb.jpg)
 
 #### 3.1.4	Waiting picture.
