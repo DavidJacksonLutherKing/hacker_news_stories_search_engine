@@ -220,10 +220,14 @@ Data Flow Steps:
  
 ## 3	Search Engine Development
 ### 3.1	Portal Design and Development
-Html code in ***/web/views/index.js***
+Html code in ***/web/views/index.js***.
+
 Javascipt souce code and library in ***/web/public/javascript/***.
+
 Fonts files in ***/web/public/fonts/***.
+
 Style files in ***/web/public/style/***.
+
 #### 3.1.1	Search Form & Search bar
 **Search form:**
 
@@ -246,8 +250,11 @@ Style files in ***/web/public/style/***.
 **Section 3.3** is to show you the backend request handle flow design and souce code location.
 
 Code in ***/web/routes/ajax.js***.
-Code in ***/web/util/run_cmd.js*** is to hang up the process and execute python script
+
+Code in ***/web/util/run_cmd.js*** is to hang up the process and execute python script.
+
 Code in ***/web/util/cache_data.js*** to check cached data, fetch cached data, and ache data file.
+
 Request handle flow at backend is as below.
 ![](http://i68.tinypic.com/x5uq0h.jpg)
 
