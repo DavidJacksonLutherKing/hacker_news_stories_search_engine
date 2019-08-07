@@ -158,6 +158,7 @@ Data Flow Steps:
 
 #### 2.2.2	Web Service Package 
 |-- web
+
 |   |-- app.js&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“app.js” – to compose of the web application
 
 |   |-- package-lock.json
@@ -170,7 +171,7 @@ Data Flow Steps:
 
 |   |-- cache_data_folder &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“cache_data_folder” –  to hold data json temp files
 
-|   |-- public &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“public” – to hold static files like fonts, images, javascript, styles
+|   |-- public &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“public” – to hold static files like fonts, images, javascript, styles
 
 |   |   |-- fonts
 
@@ -256,11 +257,17 @@ Data Flow Steps:
 
 #### 2.2.3	BigQuery Script Package
 |--service
+
 |   |-- hackernewsstories &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//python virtual environment for  Windows 10 
+
 |   |-- hackernewsstorierubuntu&ensp;//python virtual environment for Ubuntu
+
 |   |-- search-engine&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“search-engine” – python source code
+
 |   |   |-- fetch-bigquery-result.py
+
 |   |   |-- key-file&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//“key-file” – BigQuery Authentication file
+
 |   |   |   |-- hacker-news-stories-david-1fa29ef2f998.json
  
 ## 3	Search Engine Development
