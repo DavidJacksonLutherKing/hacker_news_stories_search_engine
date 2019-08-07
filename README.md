@@ -299,7 +299,7 @@ Style files in ***/web/public/style/***.
 ![](http://i68.tinypic.com/35na7tv.jpg)
  
 ### 3.2	Form Submit Communication (Frontend)
-**ection 3.2** is to show you front-end communication design and souce code location.
+**Section 3.2** is to show you front-end communication design and souce code location.
 
 Code in ***/web/public/javascript/index.js***. 
 Communication flow at front-end as below.
