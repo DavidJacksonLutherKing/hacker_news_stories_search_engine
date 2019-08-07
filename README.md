@@ -153,8 +153,8 @@ Data Flow Steps:
 |5|	BigQuery receives API request and then query and send the data back to python program.|
 |6|	Python program receives the data and outputs the data.|
 |7|	Child Process ended python program and send out the output to request handle.|
-|3|	Request handler will package the json data and send it to the front-end portal. |
-|4|	Front-end browser receives the response json data to web page and renders the html with the search result asynchronously.|
+|8|	Request handler will package the json data and send it to the front-end portal. |
+|9|	Front-end browser receives the response json data to web page and renders the html with the search result asynchronously.|
 
 #### 2.2.2	Web Service Package 
 |-- web
